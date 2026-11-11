@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { projectByHand } from './experiments.js';   // put this at the TOP of main.js
  
+
 // ---- renderer, scene, camera ----
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -25,6 +27,8 @@ window.addEventListener('resize', () => {
 // Handy for the browser console (F12): type  cs.camera  etc.
 window.cs = { THREE, renderer, scene, camera, controls };
  
+window.cs.projectByHand = projectByHand;
+
 // ---- CONTENT START ----
 let points = null;
 
